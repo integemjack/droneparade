@@ -7,7 +7,8 @@
     "start": "electron .",
     "build:win": "electron-builder --win",
     "build:mac": "electron-builder --mac",
-    "build:all": "electron-builder --win --mac"
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --win --mac --linux"
   },
   "build": {
     "appId": "com.droneblockly.parade",
@@ -24,6 +25,10 @@
     "mac": {
       "target": "dmg",
       "icon": "renderer/assets/icon.icns"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "renderer/assets/icon.png"
     }
   },
   "devDependencies": {
