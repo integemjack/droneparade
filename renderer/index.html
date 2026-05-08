@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Parade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header id="topbar">
+    <h1>🚁 Drone Parade</h1>
+    <div id="level-info">
+      <span id="level-label">Level 1</span>
+      <span id="stars">⭐⭐⭐</span>
+    </div>
+    <div id="controls">
+      <button id="btn-run" title="Run your code!">▶ Run</button>
+      <button id="btn-reset" title="Reset the grid">🔄 Reset</button>
+      <button id="btn-help" title="Show me how to solve this level">💡 Help</button>
+      <button id="btn-prev-level" title="Previous level">◀</button>
+      <button id="btn-next-level" title="Next level">▶</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Left: Blockly workspace -->
+    <div id="blockly-area">
+      <div id="blocklyDiv"></div>
+    </div>
+
+    <!-- Right: Parade grid canvas -->
+    <div id="grid-area">
+      <canvas id="paradeCanvas" width="480" height="480"></canvas>
+      <div id="message-box" class="hidden"></div>
+    </div>
+  </main>
+
+  <!-- Blockly toolbox definition -->
+  <xml id="toolbox" style="display: none">
+    <category name="🚁 Movement" colour="#4C97FF">
+      <block type="move_forward"></block>
+      <block type="turn_left"></block>
+      <block type="turn_right"></block>
+    </category>
+    <category name="🔁 Loops" colour="#FF8C1A">
+      <block type="repeat_times">
+        <field name="TIMES">2</field>
+      </block>
+    </category>
+  </xml>
+
+  <script src="../node_modules/blockly/blockly_compressed.js"></script>
+  <script src="../node_modules/blockly/blocks_compressed.js"></script>
+  <script src="../node_modules/blockly/javascript_compressed.js"></script>
+  <script src="../node_modules/blockly/msg/en.js"></script>
+  <script src="blocks.js"></script>
+  <script src="levels.js"></script>
+  <script src="grid.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

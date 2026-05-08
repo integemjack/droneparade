@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: #e8f5e9;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Top bar */
+#topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: #fff;
+  padding: 8px 20px;
+  height: 56px;
+}
+
+#topbar h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#level-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#stars {
+  font-size: 20px;
+}
+
+#controls {
+  display: flex;
+  gap: 8px;
+}
+
+#controls button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+
+#controls button:active {
+  transform: scale(0.95);
+}
+
+#btn-run {
+  background: #ffca28;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#btn-run:hover {
+  background: #ffd54f;
+}
+
+#btn-reset {
+  background: #ef5350;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#btn-reset:hover {
+  background: #e57373;
+}
+
+#btn-help {
+  background: #7c4dff;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#btn-help:hover {
+  background: #b388ff;
+}
+
+#btn-help:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#btn-prev-level, #btn-next-level {
+  background: #fff;
+  color: #43a047;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#btn-prev-level:hover, #btn-next-level:hover {
+  background: #c8e6c9;
+}
+
+/* Main layout */
+#app {
+  display: flex;
+  height: calc(100vh - 56px);
+}
+
+#blockly-area {
+  flex: 1;
+  position: relative;
+  min-width: 300px;
+  border-right: 3px solid #a5d6a7;
+}
+
+#blocklyDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#grid-area {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f1f8e9;
+  position: relative;
+  padding: 10px;
+}
+
+#paradeCanvas {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  background: #fff;
+}
+
+/* Message overlay */
+#message-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 24px 36px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  z-index: 100;
+  animation: popIn 0.3s ease;
+}
+
+#message-box.hidden {
+  display: none;
+}
+
+@keyframes popIn {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Blockly overrides for kid-friendly look */
+.blocklyToolboxDiv {
+  background: #f9fbe7 !important;
+}
