@@ -8,6 +8,7 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: 'Drone Parade - Blockly Coding',
+    icon: path.join(__dirname, 'renderer', 'assets', 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
