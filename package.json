@@ -1,6 +1,6 @@
 {
   "name": "drone-parade-blockly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Blockly coding app for kids - guide a drone through a parade grid!",
   "author": {
     "name": "integemjack",
